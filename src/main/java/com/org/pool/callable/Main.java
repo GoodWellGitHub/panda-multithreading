@@ -4,10 +4,7 @@ import com.org.pool.callable.domain.TaskInfo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +45,29 @@ public class Main {
         List<String> strings = new ArrayList<String>(12);
         System.out.println(strings.size());
 
+        FutureTask<Integer> task=new FutureTask(new Runnable() {
+            public void run() {
+                System.out.println(" ");
+            }
+        },1);
+
     }
+/*
+    public static void main(String[] args) {
+        int COUNT_BITS = 29;
+        int RUNNING = -1 << COUNT_BITS;
+        int SHUTDOWN = 0 << COUNT_BITS;
+        int STOP = 1 << COUNT_BITS;
+        int TIDYING = 2 << COUNT_BITS;
+        int TERMINATED = 3 << COUNT_BITS;
+
+        System.out.println(RUNNING);
+        System.out.println(SHUTDOWN);
+        System.out.println(STOP);
+        System.out.println(TIDYING);
+        System.out.println(TERMINATED);
+
+    }*/
+
+
 }
